@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name: Custom Greeting Message
-Plugin URI: https://yourwebsite.com/
+Plugin URI: https://apsaraaruna.com/
 Description: Displays a customizable greeting message to website visitors.
 Version: 1.0
 Author: Your Name
-Author URI: https://yourwebsite.com/
+Author URI: https://apsaraaruna.com/
 License: GPL2
 */
 
@@ -29,40 +29,6 @@ register_activation_hook(__FILE__, 'custom_greeting_message_activate');
 $options = get_option('custom_greeting_message_options');
 
 
-// Define the greeting message function
-// function custom_greeting_message()
-// {
-
-//     // Get the options from the database
-//     $options = get_option('custom_greeting_message_options');
-
-//     // Check if the greeting message is scheduled to appear
-//     if (
-//         $options['schedule'] == 'always' ||
-//         ($options['schedule'] == 'specific_days' && in_array(date('l'), $options['days'])) ||
-//         ($options['schedule'] == 'specific_times' && strtotime($options['start_time']) <= time() && strtotime($options['end_time']) >= time())
-//     ) {
-//         // Output the greeting message
-//         $location = $options['location'];
-//         $message = $options['message'];
-//         switch ($location) {
-//             case 'top':
-//                 echo '<div class="custom-greeting-message top">' . $message . '</div>';
-//                 break;
-//             case 'bottom':
-//                 echo '<div class="custom-greeting-message bottom">' . $message . '</div>';
-//                 break;
-//             case 'sidebar':
-//                 dynamic_sidebar('custom-greeting-message-sidebar');
-//                 break;
-//         }
-//     }
-// }
-
-// // Hook the greeting message function into the appropriate location
-// add_action('wp_head', 'custom_greeting_message');
-// add_action('wp_footer', 'custom_greeting_message');
-// add_action('dynamic_sidebar', 'custom_greeting_message');
 // Output the greeting message in the wp_head hook
 add_action('wp_head', 'custom_greeting_message_head');
 function custom_greeting_message_head()
